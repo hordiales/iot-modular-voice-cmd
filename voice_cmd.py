@@ -28,6 +28,9 @@ PIN_GREEN_LED = int(config['led.green'])
 GPIO.setup(PIN_RED_LED,GPIO.OUT) 
 GPIO.setup(PIN_GREEN_LED,GPIO.OUT)
 
+PIN_REC_BTN = int(config['btn.rec'])
+GPIO.setup(PIN_REC_BTN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
 # Cloud APIs initialization
 speech_to_text = SpeechToTextV1(
     username=config['watson.username'],
@@ -117,9 +120,12 @@ def detect_and_cmd():
   print("En")
 #detect_and_cmd()
 
+#TODO: run as startup service https://www.raspberrypi.org/documentation/linux/usage/rc-local.md
 if __name__ == '__main__':
-  detect_and_cmd()
-#  while(1): #WARNING: cloud API BW and calls
-#    detect_and_cmd()
-#    time.sleep(1)
-  #TODO: run as startup service https://www.raspberrypi.org/documentation/linux/usage/rc-local.md
+  while True:
+    #WARNING: cloud API consumption
+    input_state = GPIO.input(PIN_REC_BTN)
+    if input_state == False:
+        print('REC button pressed')
+        detect_and_cmd()
+        time.sleep(0.2)
