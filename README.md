@@ -1,4 +1,6 @@
-Proyecto para Raspberry Pi 3 que recibe ordenes por voz. Según lo detectado, prende leds (luces), averigua el clima en internet y lo comunica vía voz. Modular, cada componente puede ser cloud o local.
+Dispositivo inteligente comandado por voz, de arquitectura modular vinculada a Cloud Computing y aplicaciones varias en domótica.
+
+Implementación con Raspberry Pi 3, que recibe ordenes por voz vía un micrófono conectado a una placa usb de audio. Según lo detectado, enciende leds (o luces vía reles), averigua el clima en internet y lo comunica vía voz. También puede intentar interpretar cualquier tipo de consulta gracias a la inteligencia provista por Wolfram Alpha. Modular, cada componente esta pensado para ser intercambiable y funcionar tanto de forma local como en la nube (Cloud).
 
 Demo: http://www.youtube.com/watch?v=DqKZwT7mEv8
 
