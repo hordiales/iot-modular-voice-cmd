@@ -4,6 +4,8 @@ Implementación con Raspberry Pi 3, que recibe ordenes por voz vía un micrófon
 
 Demo: http://www.youtube.com/watch?v=DqKZwT7mEv8
 
+![IoT Diagram](IoT-Diagram-speechproject.png)
+
 # Servicios
 * Speech To text (voz a texto)
 * Text To speech (texto a voz)
